@@ -1,21 +1,39 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
 %}
-<h1 align="center">Notes</h1>
-<ul class="list-group list-group-flush" id="notes">
-  {% for note in user.notes %}
-  <li class="list-group-item">
-    {{ note.data }}
-    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </li>
-  {% endfor %}
-</ul>
-<form method="POST">
-  <textarea name="note" id="note" class="form-control"></textarea>
-  <br />
-  <div align="center">
-    <button type="submit" class="btn btn-primary">Add Note</button>
+
+<form method="POST" class="text-center">
+  <h1 class="mb-5 mt-3">Priorisierungs Programm</h1>
+  <div class="d-grip justify-content-center me-3 mb-4">
+    <button class="btn btn-primary btn-lg me-3" type="button" onclick="location.href='/new_project'">Projekt anlegen</button>
+    <button class="btn btn-primary btn-lg me-3" type="button" onclick="location.href='/rahmenbedingungen'">Projekte Priorisieren</button>
+    <button class="btn btn-primary btn-lg" type="button">Projekt suchen???</button> 
+  </div>
+  <div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action" onclick="location.href='/project_info'">Projekt 1</button>
+    <button type="button" class="list-group-item list-group-item-action" onclick="location.href='/project_info'">Projekt 2</button>
+    <button type="button" class="list-group-item list-group-item-action" onclick="location.href='/project_info'">Projekt 3</button>
+    <button type="button" class="list-group-item list-group-item-action" onclick="location.href='/project_info'">Projekt 4</button>
+  </div>
+
+  <div id="project-buttons" class="list-group">
+    <!-- Buttons werden hier durch JavaScript hinzugefügt -->
   </div>
 </form>
-{% endblock %}
+
+<script>
+  // Array mit den Projektnamen
+  const projects = ["Projekt 1", "Projekt 2", "Projekt 3", "Projekt 4"];
+
+  // Container für die Buttons
+  const projectButtonsContainer = document.getElementById('project-buttons');
+
+  // Dynamische Buttons erstellen
+  projects.forEach(projectName => {
+    const button = document.createElement('button');
+    button.className = 'list-group-item list-group-item-action';
+    button.type = 'button';
+    button.textContent = projectName; // Name des Projekts als Button-Beschriftung
+    projectButtonsContainer.appendChild(button);
+  });
+</script>
+{% endblock %}  

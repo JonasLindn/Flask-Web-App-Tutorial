@@ -1,0 +1,159 @@
+{% extends "base.html" %} {% block title %}Projekt anlegen{% endblock %} {% block content
+    %}
+    
+<form method="POST">
+    <h1 class="mb-5 mt-3" align="center">Projekt anlegen</h1>
+    <div class="form-group">
+        <label for="project_name">Projektname</label>
+        <input
+            type="text"
+            class="form-control"
+            id="project_name"
+            name="project_name"
+            placeholder="Name des Projekts"
+        />
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="quartal">Quartal</label>
+            <input
+              type="text"
+              class="form-control"
+              id="quartal"
+              name="quartal"
+              placeholder="In welchem Quartal soll das Projet starten?"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="costs">Kosten</label>
+            <input
+              type="number"
+              class="form-control"
+              id="costs"
+              name="costs"
+              placeholder="Kosten des Projekts (in Euro)"
+            />
+          </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_1">1. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_1"
+              name="kpi_1"
+              placeholder="1. KPI eintragen"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_2">2. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_2"
+              name="kpi_2"
+              placeholder="2. KPI eintragen"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_3">3. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_3"
+              name="kpi_3"
+              placeholder="3. KPI eintragen"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_4">4. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_4"
+              name="kpi_4"
+              placeholder="4. KPI eintragen"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_5">5. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_5"
+              name="kpi_5"
+              placeholder="5. KPI eintragen"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_6">6. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_6"
+              name="kpi_6"
+              placeholder="6. KPI eintragen"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_7">7. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_7"
+              name="kpi_7"
+              placeholder="7. KPI eintragen"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="kpi_8">8. KPI</label>
+            <input
+              type="text"
+              class="form-control"
+              id="kpi_8"
+              name="kpi_8"
+              placeholder="8. KPI eintragen"
+            />
+          </div>
+        </div>
+      </div>
+
+</form>
+
+<div class="d-grid gap-2 d-md-block mt-4" align="center">
+    <button class="btn btn-primary btn-lg" type="button" onclick="location.href='/'">Zurück</button>
+    <button class="btn btn-primary btn-lg" type="button" onclick="location.href='/'">Projekt erstellen</button>
+</div>
+
+{% endblock %}  

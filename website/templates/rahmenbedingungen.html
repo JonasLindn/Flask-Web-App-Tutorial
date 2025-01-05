@@ -1,0 +1,104 @@
+{% extends "base.html" %} {% block title %}Projekt anlegen{% endblock %} {% block content
+    %}
+    
+<form method="POST">
+    <h1 class="mb-5 mt-3" align="center">Rahmenbedingungen</h1>
+    <div class="form-group">
+        <label for="budget">Budget</label>
+        <input
+            type="number"
+            class="form-control"
+            id="budget"
+            name="budget"
+            placeholder="Benötigtes Budget"
+        />
+    </div>
+
+
+    <style>
+        .priority-dropdown {
+          width: 320px; /* Definiert die Breite */
+        }
+      </style>
+
+    <div class="d-flex justify-content-between gap-3">
+        <div class="form-group">
+          <label for="priority1">Priorität 1</label>
+          <select class="form-control w-150 priority-dropdown" id="priority1" name="priority1" onchange="updateDropdowns()">
+            <option value="" selected disabled>Wähle eine KPI</option>
+            <option value="1">KPI 1</option>
+            <option value="2">KPI 2</option>
+            <option value="3">KPI 3</option>
+            <option value="4">KPI 4</option>
+            <option value="5">KPI 5</option>
+            <option value="6">KPI 6</option>
+            <option value="7">KPI 7</option>
+            <option value="8">KPI 8</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="priority2">Priorität 2</label>
+          <select class="form-control priority-dropdown" id="priority2" name="priority2" onchange="updateDropdowns()">
+            <option value="" selected disabled>Wähle eine KPI</option>
+            <option value="1">KPI 1</option>
+            <option value="2">KPI 2</option>
+            <option value="3">KPI 3</option>
+            <option value="4">KPI 4</option>
+            <option value="5">KPI 5</option>
+            <option value="6">KPI 6</option>
+            <option value="7">KPI 7</option>
+            <option value="8">KPI 8</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="priority3">Priorität 3</label>
+          <select class="form-control priority-dropdown" id="priority3" name="priority3" onchange="updateDropdowns()">
+            <option value="" selected disabled>Wähle eine KPI</option>
+            <option value="1">KPI 1</option>
+            <option value="2">KPI 2</option>
+            <option value="3">KPI 3</option>
+            <option value="4">KPI 4</option>
+            <option value="5">KPI 5</option>
+            <option value="6">KPI 6</option>
+            <option value="7">KPI 7</option>
+            <option value="8">KPI 8</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 d-md-block mt-5" align="center">
+        <button class="btn btn-primary btn-lg" type="button" onclick="location.href='/'">Zurück</button>
+        <button class="btn btn-primary btn-lg" type="button" onclick="location.href='/priority'">Projekte priorisieren</button>
+      </div>
+      
+      <script>
+        function updateDropdowns() {
+          // Hol alle Dropdowns
+          const dropdowns = document.querySelectorAll('.priority-dropdown');
+          
+          // Sammle alle ausgewählten Werte
+          const selectedValues = new Set();
+          dropdowns.forEach(dropdown => {
+            if (dropdown.value) {
+              selectedValues.add(dropdown.value);
+            }
+          });
+      
+          // Aktualisiere die Optionen in allen Dropdowns
+          dropdowns.forEach(dropdown => {
+            const options = dropdown.querySelectorAll('option');
+            options.forEach(option => {
+              if (selectedValues.has(option.value) && option.value !== dropdown.value) {
+                option.disabled = true; // Deaktiviert, wenn bereits ausgewählt
+              } else {
+                option.disabled = false; // Aktiviert, wenn nicht ausgewählt
+              }
+            });
+          });
+        }
+      </script>
+      
+
+
+
+{% endblock %}  
